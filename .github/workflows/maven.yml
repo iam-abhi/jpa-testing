@@ -30,12 +30,9 @@ jobs:
       run: |
         sudo apt-get install -y mysql-client
         mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "SHOW DATABASES"
-    - name: MySQL server from host
+    - name: MySQL connection start
       run: |
-        sudo yum install mysql-server
-    - name: MySQL connection restart
-      run: |
-        sudo service mysqld restart
+        sudo service mysqld start
     - name: Setup Runner Database
       run: |
         MYSQL_PWD=password mysql -u root -e 'CREATE DATABASE IF NOT EXISTS bookDb;'
