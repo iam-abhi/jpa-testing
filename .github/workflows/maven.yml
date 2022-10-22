@@ -32,7 +32,7 @@ jobs:
         mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "SHOW DATABASES"
     - name: Setup Runner Database
       run: |
-        mysql -uroot -h127.0.0.1 -proot -e 'CREATE DATABASE IF NOT EXISTS bookDb;'
+        MYSQL_PWD=password mysql -u root -e 'CREATE DATABASE IF NOT EXISTS bookDb;'
     - name: Junit Assignment Action
       id: assignmentAction
       uses: iam-abhi/junit-github-action@v0.9
