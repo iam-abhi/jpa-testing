@@ -33,9 +33,9 @@ jobs:
     - name: MySQL server from host
       run: |
         sudo apt install mysql-server
-    - name: MySQL connection start
+    - name: MySQL connection restart
       run: |
-        sudo service mysqld start
+        sudo service mysqld restart
     - name: Setup Runner Database
       run: |
         MYSQL_PWD=password mysql -u root -e 'CREATE DATABASE IF NOT EXISTS bookDb;'
