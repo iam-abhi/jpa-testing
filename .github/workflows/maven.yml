@@ -41,4 +41,4 @@ jobs:
         mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e 'CREATE DATABASE IF NOT EXISTS bookDb;'
     - name: Junit Assignment Action
       id: assignmentAction
-      uses: iam-abhi/junit-github-action@v0.9
+      uses: iam-abhi/junit-github-action@v0.10
