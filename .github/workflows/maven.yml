@@ -30,6 +30,9 @@ jobs:
       run: |
         sudo apt-get install -y mysql-client
         mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e "SHOW DATABASES"
+    - name: MySQL server from host
+      run: |
+        sudo apt install mysql-server
     - name: MySQL connection start
       run: |
         sudo service mysqld start
