@@ -39,6 +39,9 @@ jobs:
     - name: Setup Runner Database
       run: |
         mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e 'CREATE DATABASE IF NOT EXISTS bookDb;'
+    - name: Grant Access
+      run: |
+        mysql --host 127.0.0.1 --port 32574 -uroot -ppassword -e 'GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY 'password' WITH GRANT OPTION;'
     - name: Junit Assignment Action
       id: assignmentAction
       uses: iam-abhi/junit-github-action@v0.10
